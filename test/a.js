@@ -4,3 +4,4 @@ global.Couchbird = require('Couchbird')({
 		server_ip: '194.226.171.100'
 	})
 	.bucket('rdf');
+global.moment = require('moment-timezone');

@@ -7,6 +7,8 @@ var ZeroDimensional = require('../ResourceBasic/ZeroDimensionalVolume.js');
 class Plan extends BasicVolume {
 	constructor(parent) {
 		super(parent);
+		if (parent)
+			this.description = parent.description;
 		this.PrimitiveVolume = TimeChunk;
 	}
 
@@ -15,6 +17,22 @@ class Plan extends BasicVolume {
 			return chunk.start;
 		});
 		return this;
+	}
+
+	set description(value) {
+		this._description = value;
+	}
+
+	get description() {
+		return this._description;
+	}
+
+	parametrize(params = {}) {
+		this.description = params;
+		this.content = _.map(this.content, (chunk) => {
+			chunk.parametrize(params);
+			return chunk;
+		});
 	}
 
 	observe(params = {}) {
