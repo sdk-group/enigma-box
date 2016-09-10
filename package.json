@@ -9,7 +9,6 @@
 	"author": "SS && V.D.",
 	"license": "ISC",
 	"dependencies": {
-		"Couchbird": "git+https://github.com/sdk-group/Couchbird.git",
 		"moment-timezone": "^0.5.5",
 		"bluebird": "^3.4.3",
 		"lodash": "^4.15.0"
